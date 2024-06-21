@@ -5,10 +5,10 @@ import Image from "next/image";
 
 function isMobile() {
 
-
-  const userAgent = navigator.userAgent || window.opera;
-  return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
-
+  if (typeof window !== "undefined") {
+    const userAgent = window.navigator.userAgent || window.opera;
+    return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+  }
 
 }
 
