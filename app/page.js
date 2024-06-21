@@ -1,113 +1,176 @@
+"use client";
+
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+function isMobile() {
+
+
+  const userAgent = navigator.userAgent || window.opera;
+  return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+
+
+}
+
+const GradientButton = () => {
+
+  // const handleClick = () => {
+  //   window.location.href = 'https://www.baidu.com';
+  // };
+
+  return (
+
+
+    <a href="https://apps.apple.com/us/app/floraltile/id6504483514" target="_blank" rel="noopener noreferrer">
+      <button className="bg-gradient-to-r from-blue-300 via-purple-300 via-pink-300 via-orange-300 to-red-300 text-white font-bold py-4 px-5 rounded-full shadow-lg transform transition duration-300 hover:scale-105 mt-6 mb-6"
+        target='_blank'
+      >
+        Download In iOS
+      </button>
+    </a>
+  );
+};
+
+export default function Home() {
+
+
+  // useEffect(() => {
+  //   isMobile()
+  // }, []);
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-12 bg-black">
+
+
+
+
+      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex bg-red" >
+
+
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
+          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert rounded-[20px]"
+          src="/logo1.jpg"
+          alt="pattern tile Logo"
+          width={70}
+          height={70}
           priority
         />
-      </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        {typeof window !== "undefined" && isMobile() ? <p className="relative text-white mt-2 text-2xl mt-[20px]">FloralTile</p> : <p className="relative text-white mt-2 text-2xl mr-[600px]">FloralTile</p>}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        {typeof window !== "undefined" && isMobile() ? <></> : <GradientButton />}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+
+
+        {/* <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onclick="window.location.href='https://www.baidu.com'">
+          download
+        </button> */}
+
+
+      </div >
+
+      <p className="text-white mt-2 mt-[30px]">Seamless tile patterns generated by AI, such as flowers, fruits, and small animals </p>
+
+
+      <video
+        className="w-full max-w-3xl rounded-lg shadow-lg"
+        style={{ width: '280px' }}
+        controls
+      >
+        <source src="/intro.mp4" type="video/mp4" />
+
+        Your browser does not support the video tag.
+      </video>
+
+
+      {/* <div style={{ width: '20px', height: '20px' }}></div> */}
+      <GradientButton />
+
+      {/* <div style={{ width: '20px', height: '20px' }}></div> */}
+
+      {
+        !isMobile() ? <>
+          <p className="text-white w-[700px] ">
+            can be downloaded as single patterns or full screen patterns for any purpose. There are over 200 types of flower patterns, 80 types of fruits, 40 types of animal patterns, and 600 types of ceramic tile patterns, which are rich in variety and generate clear images. They can be used as wallpapers, murals, fabrics, and any other places you want to use.
           </p>
-        </a>
-      </div>
-    </main>
+
+
+          <p className="text-transparent bg-clip-text mt-10 mb-5" style={{
+            background: 'linear-gradient(to right, #a0bcf3, #b1afe9, #d7a2da, #e89ccb, #f5b8b0)', WebkitBackgroundClip: "text",
+            color: "transparent"
+          }}>
+            20 Promo Codes for iOS
+          </p>
+
+          <p className="text-white w-[700px] ">FXM77EXR4XPY
+            FN4LFYJ66M6E&nbsp;
+            RFHHLYFWF9HX&nbsp;
+            6R9P3WELA9NF&nbsp;
+            AWX94TA4W6R7&nbsp;
+            69T6PY9NHPRT&nbsp;
+            ANTFKXFPJ4JM&nbsp;
+            R9MEH6L7H7TX&nbsp;
+            K9W4RXPWWWN6&nbsp;
+            NK4993X3WXJJ&nbsp;
+            XY7R6794XT66&nbsp;
+            J3J7PELP3AHW&nbsp;
+            AMPLT7F7AJ9F&nbsp;
+            EYPPALT3FJ3N&nbsp;
+            K66MYX4KJW9X&nbsp;
+            HTRYT49KWJ3W&nbsp;
+            MA6TW4EX3LW4&nbsp;
+            TRTKKHRW9HTW&nbsp;
+            NWX343NHJ93E&nbsp;
+            NMW4JPWAMFJ3&nbsp;
+          </p></> : <>
+          <p className="text-white w-[350px]">
+            can be downloaded as single patterns or full screen patterns for any purpose. There are over 200 types of flower patterns, 80 types of fruits, 40 types of animal patterns, and 600 types of ceramic tile patterns, which are rich in variety and generate clear images. They can be used as wallpapers, murals, fabrics, and any other places you want to use.
+          </p>
+
+
+          <p className="text-transparent bg-clip-text mt-10 mb-5" style={{
+            background: 'linear-gradient(to right, #a0bcf3, #b1afe9, #d7a2da, #e89ccb, #f5b8b0)', WebkitBackgroundClip: "text",
+            color: "transparent"
+          }}>
+            20 Promo Codes for iOS
+          </p>
+
+          <p className="text-white w-[350px] ">FXM77EXR4XPY
+            FN4LFYJ66M6E&nbsp;
+            RFHHLYFWF9HX&nbsp;
+            6R9P3WELA9NF&nbsp;
+            AWX94TA4W6R7&nbsp;
+            69T6PY9NHPRT&nbsp;
+            ANTFKXFPJ4JM&nbsp;
+            R9MEH6L7H7TX&nbsp;
+            K9W4RXPWWWN6&nbsp;
+            NK4993X3WXJJ&nbsp;
+            XY7R6794XT66&nbsp;
+            J3J7PELP3AHW&nbsp;
+            AMPLT7F7AJ9F&nbsp;
+            EYPPALT3FJ3N&nbsp;
+            K66MYX4KJW9X&nbsp;
+            HTRYT49KWJ3W&nbsp;
+            MA6TW4EX3LW4&nbsp;
+            TRTKKHRW9HTW&nbsp;
+            NWX343NHJ93E&nbsp;
+            NMW4JPWAMFJ3&nbsp;
+          </p>
+
+
+
+        </>
+
+
+
+      }
+
+
+
+
+    </main >
   );
 }
